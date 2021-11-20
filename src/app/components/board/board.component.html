@@ -1,0 +1,23 @@
+<div class=" h-100">
+    <div class="d-flex pt-5">
+        <div class="col-md-6 d-flex">
+            <div class="text-center mx-auto my-auto p-5 card">
+                <h1>Turno: {{ player }} </h1>
+                <button (click)="newGame()" type="button" class="btn btn-outline-dark">Começar um novo jogo</button>
+                <h2 class="mt-2" *ngIf="winner">
+                    O jogador {{ winner }} ganhou o jogo!
+                </h2>
+            </div>
+        </div>
+        <div class="col-md-6 d-flex">
+            <main class="text-center mx-auto my-auto p-5">
+                <app-square *ngFor="let val of squares; let i = index" [value]="val" (click)="makeMove(i)">
+
+                </app-square>
+            </main>
+        </div>
+    </div>
+    <div class="text-center mb-0 mt-auto">
+        <p>Feito com carinho, por Ronaldo Bianco</p>
+    </div>
+</div>
